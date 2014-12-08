@@ -7,7 +7,8 @@ package sample.passby.value;
 public class App {
 	public static void main(String[] args) {
 		int xOrginal = 0, yOriginal = 0;
-		System.out.println("Original Coordinates:" + xOrginal + "," + yOriginal);
+		System.out
+				.println("Original Coordinates:" + xOrginal + "," + yOriginal);
 		App.getNextCoordinates(xOrginal, yOriginal);
 		System.out.println("After modification of Coordinates:" + xOrginal
 				+ "," + yOriginal);
@@ -19,6 +20,14 @@ public class App {
 		System.out.println("After modification of Point:" + pOriginal.getX()
 				+ "," + pOriginal.getY());
 
+		Point pToBeChangedOriginal = new Point(0, 0);
+		System.out.println("Original Point:" + pToBeChangedOriginal.getX()
+				+ "," + pToBeChangedOriginal.getY());
+		App.changeThePointer(pToBeChangedOriginal);
+		System.out.println("After modification of Point:"
+				+ pToBeChangedOriginal.getX() + ","
+				+ pToBeChangedOriginal.getY());
+
 	}
 
 	public static void getNextCoordinates(int x, int y) {
@@ -29,5 +38,9 @@ public class App {
 	public static void getNextCoordinates(Point point) {
 		point.setX(12);
 		point.setY(15);
+	}
+
+	public static void changeThePointer(Point point) {
+		point = new Point(10, 10);
 	}
 }
